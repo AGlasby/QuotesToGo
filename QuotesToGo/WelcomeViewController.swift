@@ -10,7 +10,7 @@ import CoreData
 
 class WelcomeViewController: UIViewController {
 
-    var randomQuote: NSArray!
+    var randomQuotes: NSArray!
     var selectedRandomQuote:Dictionary<String,String>!
     var moc:NSManagedObjectContext!
 
@@ -27,14 +27,8 @@ class WelcomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         self.navigationController?.setNavigationBarHidden(true, animated: false)
-
-        if let path = NSBundle.mainBundle().pathForResource("DailyQuotes", ofType: "plist") {
-            randomQuote = NSArray(contentsOfFile: path)
-
-        }
-
+        randomQuotes = QuoteHelper.initRandomQuotes()
         moc = CoreDataHelper.managedObjectContext()
     }
     
@@ -42,16 +36,16 @@ class WelcomeViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         chooseRandomQuote()
-        
     }
-    
+
+
     func chooseRandomQuote() {
-        let randomQuoteIndex = Int(arc4random_uniform(UInt32(randomQuote.count)))
-        selectedRandomQuote = randomQuote.objectAtIndex(randomQuoteIndex) as! Dictionary<String,String>
+        selectedRandomQuote = QuoteHelper.getRandomQuote(randomQuotes)
         dailyQuoteAuthor.text = selectedRandomQuote["author"]
         dailyQuoteTextView.text = selectedRandomQuote["quote"]
     }
 
+    
     @IBAction func saveRandomQuote(sender: AnyObject) {
 
         let button = sender as! UIButton

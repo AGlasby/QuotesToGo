@@ -15,7 +15,9 @@ class AddQuoteViewController: UIViewController, UITextViewDelegate, NSLayoutMana
     @IBOutlet weak var quoteTextView: UITextView!
     @IBOutlet weak var donebutton: UIButton!
     @IBOutlet weak var backButton: UIButton!
-    
+
+    var randomQuotes: NSArray!
+    var selectedRandomQuote:Dictionary<String,String>!
     var moc:NSManagedObjectContext!
 
     
@@ -26,7 +28,6 @@ class AddQuoteViewController: UIViewController, UITextViewDelegate, NSLayoutMana
         self.createBorder()
 
         moc = CoreDataHelper.managedObjectContext()
-        
     }
 
 
@@ -36,10 +37,10 @@ class AddQuoteViewController: UIViewController, UITextViewDelegate, NSLayoutMana
         borderLayer.lineWidth = 24
         borderLayer.fillColor = UIColor.clearColor().CGColor
         borderLayer.path = UIBezierPath(rect: self.view.bounds).CGPath
-
         self.borderView.layer.addSublayer(borderLayer)
 
     }
+
 
     func textViewDidBeginEditing(textView: UITextView) {
         if textView.text == "Enter quote here" {
@@ -48,12 +49,14 @@ class AddQuoteViewController: UIViewController, UITextViewDelegate, NSLayoutMana
         }
     }
 
+
     func textViewDidEndEditing(textView: UITextView) {
         if textView.text == "" {
             textView.text = "Enter quote here"
             textView.textColor = UIColor(white: 0.8, alpha: 1.0)
         }
     }
+
 
     func layoutManager(layoutManager: NSLayoutManager, lineSpacingAfterGlyphAtIndex glyphIndex: Int, withProposedLineFragmentRect rect: CGRect) -> CGFloat {
         return 9
@@ -89,8 +92,15 @@ class AddQuoteViewController: UIViewController, UITextViewDelegate, NSLayoutMana
             let alert = UIAlertController(title: "Quote missing", message: "Please enter a quote", preferredStyle: .Alert)
             alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
             self.presentViewController(alert, animated: true, completion: nil)
-
         }
+    }
+
+
+    @IBAction func getRandomQuote(sender: AnyObject) {
+        randomQuotes = QuoteHelper.initRandomQuotes()
+        selectedRandomQuote = QuoteHelper.getRandomQuote(randomQuotes)
+        authorTextField.text = selectedRandomQuote["author"]
+        quoteTextView.text = selectedRandomQuote["quote"]
     }
 
 

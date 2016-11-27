@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -314,10 +315,24 @@
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="teA-fK-3e6" userLabel="Get Random Quote">
+                                        <rect key="frame" x="117.33333333333331" y="413" width="180" height="37"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="180" id="Aol-Qg-8Zs"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="AvenirNextCondensed-DemiBold" family="Avenir Next Condensed" pointSize="18"/>
+                                        <state key="normal" title="Get Random Quote">
+                                            <color key="titleColor" red="0.54117647058823526" green="0.54117647058823526" blue="0.54117647058823526" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="getRandomQuote:" destination="qXT-2n-qMc" eventType="touchUpInside" id="yiE-Nt-XOm"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="BII-hw-lS2" firstAttribute="top" secondItem="JHr-b3-OhA" secondAttribute="top" constant="273" id="5GN-jt-p0C"/>
+                                    <constraint firstItem="teA-fK-3e6" firstAttribute="centerX" secondItem="JHr-b3-OhA" secondAttribute="centerX" id="g85-Po-1xX"/>
                                     <constraint firstItem="BII-hw-lS2" firstAttribute="centerX" secondItem="JHr-b3-OhA" secondAttribute="centerX" id="n7X-vb-xjJ"/>
                                 </constraints>
                             </view>
@@ -418,6 +433,7 @@
                             <constraint firstItem="mx6-hI-MWb" firstAttribute="centerX" secondItem="VZ8-n0-07W" secondAttribute="centerX" id="ghM-c2-R6t"/>
                             <constraint firstAttribute="trailingMargin" secondItem="vOV-RA-bSi" secondAttribute="trailing" id="ghV-eR-sVT"/>
                             <constraint firstItem="CJ4-OK-Dix" firstAttribute="top" secondItem="mx6-hI-MWb" secondAttribute="bottom" constant="25" id="hqL-82-I4A"/>
+                            <constraint firstItem="teA-fK-3e6" firstAttribute="top" secondItem="vOV-RA-bSi" secondAttribute="bottom" constant="60" id="kvq-bv-HZl"/>
                             <constraint firstItem="mx6-hI-MWb" firstAttribute="top" secondItem="UpN-lx-Bc0" secondAttribute="bottom" constant="49" id="mi9-lu-mQ3"/>
                             <constraint firstItem="GNX-Fg-Axm" firstAttribute="top" secondItem="BjT-FT-Lla" secondAttribute="bottom" constant="23" id="nlX-Aa-zJK"/>
                             <constraint firstAttribute="trailingMargin" secondItem="CJ4-OK-Dix" secondAttribute="trailing" id="oyp-eK-3vC"/>

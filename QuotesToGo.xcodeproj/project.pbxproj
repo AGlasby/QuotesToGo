@@ -36,6 +36,7 @@
 		E77268781DD90F1A00DA4B6D /* StartTransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77268771DD90F1A00DA4B6D /* StartTransitionAnimator.swift */; };
 		E772687A1DE05BF600DA4B6D /* ImageMasker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77268791DE05BF600DA4B6D /* ImageMasker.swift */; };
 		E7C9ACA51D65D11700DE8A13 /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C9ACA41D65D11700DE8A13 /* CoreDataHelper.swift */; };
+		E7EC194F1DEAE8150086EFE5 /* QuoteHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7EC194E1DEAE8150086EFE5 /* QuoteHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +77,7 @@
 		E77268791DE05BF600DA4B6D /* ImageMasker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageMasker.swift; sourceTree = "<group>"; };
 		E7C9ACA41D65D11700DE8A13 /* CoreDataHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
 		E7EC194D1DE98FE50086EFE5 /* QuotesToGo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = QuotesToGo.entitlements; sourceTree = "<group>"; };
+		E7EC194E1DEAE8150086EFE5 /* QuoteHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuoteHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,6 +202,7 @@
 				E772686E1DD8682100DA4B6D /* QuotesTextView.swift */,
 				E77268731DD86E1100DA4B6D /* AuthorManager.swift */,
 				E77268791DE05BF600DA4B6D /* ImageMasker.swift */,
+				E7EC194E1DEAE8150086EFE5 /* QuoteHelper.swift */,
 			);
 			name = Helper;
 			sourceTree = "<group>";
@@ -302,6 +305,7 @@
 				9EE3C4E71BBC7692000C0857 /* Author+CoreDataProperties.m in Sources */,
 				9EF20CF11BB2E33900C62296 /* QuotesToGo.xcdatamodeld in Sources */,
 				9E1F5C371BC7FA8D006E3D48 /* QuoteImageViewController.swift in Sources */,
+				E7EC194F1DEAE8150086EFE5 /* QuoteHelper.swift in Sources */,
 				9EF20CEB1BB2E33900C62296 /* WelcomeViewController.swift in Sources */,
 				9EE3C4E91BBC7692000C0857 /* Quote+CoreDataProperties.m in Sources */,
 				9E1A192D1BB831F90058078A /* QuoteTableViewCell.swift in Sources */,
